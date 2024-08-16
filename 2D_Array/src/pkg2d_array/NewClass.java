@@ -38,10 +38,21 @@ public static String[] dayOfTheWeek = {"Monday", "Tuesday", "Wednesday", "Thursd
                     
                    if (MealPlan[row][col] == search)
                    {  
-                        result = "row:"+row+"col:"+col;
+                        result = " row:"+row+" col:"+col;
                         found = true;
                    }
+                   if (col == MealPlan[row].length -1) 
+                   {
+                       break;
+                   }
+                   
+                   
                 }
+                
+                if (row == MealPlan.length-1) 
+                   {
+                       break;
+                   }
             }
             if (found) {
                 System.out.println("the "+search+" was found at "+result);
@@ -116,12 +127,13 @@ public static String[] dayOfTheWeek = {"Monday", "Tuesday", "Wednesday", "Thursd
         //JOptionPane.showMessageDialog(null, Output);
     }
     public static void main(String[] args) {
-       /* Client newClient = new Client();
+        Client newClient = new Client();
         //newClient.captureMealPlan();
         newClient.generateMealPlan();
-        System.out.println(newClient.DisplayFormatedMealPlan());
+        newClient.searchMealPlanItem( "oats");
+        //System.out.println(newClient.DisplayFormatedMealPlan());
         //System.out.println(newClient.DisplayMealPlan());*/
-       displayDayOfWeekArray();
+       //displayDayOfWeekArray();
     }
     
    
