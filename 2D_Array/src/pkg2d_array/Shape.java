@@ -67,12 +67,13 @@ public class Shape {
               int[] newShape3Dimensions = { 3, 3,3};
             //Triangle newShape = new Triangle();
             Triangle newShape1 = new Triangle(newShape1Dimensions,"Isoscelese");
-            Triangle newShape2 = new Triangle(newShape1Dimensions,"Scalene");
-            Triangle newShape3 = new Triangle(newShape1Dimensions,"Equilateral");
-
+            Triangle newShape2 = new Triangle(newShape2Dimensions,"Scalene");
+            Triangle newShape3 = new Triangle(newShape3Dimensions,"Equilateral");
+           
             myShapes.add(newShape1);
             myShapes.add(newShape2);
             myShapes.add(newShape3);
+            
         }
 
     }
