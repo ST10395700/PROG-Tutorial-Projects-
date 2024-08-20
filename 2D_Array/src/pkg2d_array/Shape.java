@@ -13,47 +13,61 @@ import java.util.List;
  */
 public class Shape {
 
-    public static List<Shape> myShapes = new ArrayList<>();
+    public Shape(int[] dimensions,String newShapeName) {
+      shapeName = newShapeName  ;
+      shapeSideDimension = dimensions;
+     // shapeArea = CalcArea();  
+    }
 
+    public static List<Shape> myShapes = new ArrayList<>();
+    
     public String shapeType = "";
     public String shapeName = "";
-    public int numShapeSides = 0;
+    public int shapeNumSides = 0;
+    public int[] shapeSideDimension;
     public int shapeArea;
-
+    
+    // public int CalcArea(){};
     public static class Quadrilateral extends Shape {
 
-        public Quadrilateral() {
-            //this.numShapeSides = 4;
-            numShapeSides = 4;
+        public Quadrilateral(int[] newDimensions, String myShapeName) {
+            //this.shapeNumSides = 4;
+            super(newDimensions, myShapeName);
+            shapeNumSides = newDimensions.length;
             shapeType = "Quadrilateral";
+        
         }
-
+        // overide public int CalcArea(){};
         public static void mainMethod(String[] args) {
-
-            Quadrilateral shape1 = new Quadrilateral();
-            Quadrilateral shape2 = new Quadrilateral();
+            int[] squreDimensions = {4, 4, 4, 4};
+            int[] rectDimensions = {2, 4, 2, 4};
+            Quadrilateral shape1 = new Quadrilateral(squreDimensions,"Square");
+            Quadrilateral shape2 = new Quadrilateral(rectDimensions,"Rectangle");
 
             myShapes.add(shape1);
             myShapes.add(shape2);
-
-            shape1.shapeName = "Square";
-            shape2.shapeName = "Rectangle";
         }
     }
 
     public static class Triangle extends Shape {
 
         // public Triangle(){}
-        public Triangle(String triName) {
-            this.shapeName = triName;
+        public Triangle(int[] newDimensions, String myShapeName) {
+            super(newDimensions, myShapeName);
+            
             this.shapeType = "Triangle";
-            this.numShapeSides = 3;
-        }
+            this.shapeNumSides = newDimensions.length;
 
+            
+        }
+        // overide public int CalcArea(){};
         public static void mainMethod(String[] args) {
-            Triangle newShape1 = new Triangle("Isosceles");
-            Triangle newShape2 = new Triangle("Scalene");
-            Triangle newShape3 = new Triangle("Equilateral");
+              int[] newShape1Dimensions = { 4, 2, 4};
+              int[] newShape2Dimensions = { 3, 2, 4};
+              int[] newShape3Dimensions = { 3, 3,3};
+            Triangle newShape1 = new Triangle(newShape1Dimensions,"Isoscelese");
+            Triangle newShape2 = new Triangle(newShape1Dimensions,"Scalene");
+            Triangle newShape3 = new Triangle(newShape1Dimensions,"Equilateral");
 
             myShapes.add(newShape1);
             myShapes.add(newShape2);
@@ -66,10 +80,10 @@ public class Shape {
 
         Quadrilateral.mainMethod(args);
         Triangle.mainMethod(args);
-        
+
         for (int shapeAtIndex = 0; shapeAtIndex < /*myShapes.lengh()*/ myShapes.size(); shapeAtIndex++) {
 
-            System.out.println(String.format("Shape name: %-10s\tShape numSides: %-3d \t Shape type: %-15s", /*myShapes[0]*/ myShapes.get(shapeAtIndex).shapeName, myShapes.get(shapeAtIndex).numShapeSides, myShapes.get(shapeAtIndex).shapeType));
+            System.out.println(String.format("Shape name: %-10s\tShape numSides: %-3d \t Shape type: %-15s", /*myShapes[0]*/ myShapes.get(shapeAtIndex).shapeName, myShapes.get(shapeAtIndex).shapeNumSides, myShapes.get(shapeAtIndex).shapeType));
         }
         /*
         Shape shape1 = new Shape();
