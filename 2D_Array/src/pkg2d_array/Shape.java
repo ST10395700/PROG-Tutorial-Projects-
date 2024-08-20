@@ -12,7 +12,7 @@ import java.util.List;
  * @author tvnmt
  */
 public class Shape {
-
+    //public Shape(){}
     public Shape(int[] dimensions,String newShapeName) {
       shapeName = newShapeName  ;
       shapeSideDimension = dimensions;
@@ -51,7 +51,7 @@ public class Shape {
 
     public static class Triangle extends Shape {
 
-        // public Triangle(){}
+        //public Triangle(){}
         public Triangle(int[] newDimensions, String myShapeName) {
             super(newDimensions, myShapeName);
             
@@ -65,6 +65,7 @@ public class Shape {
               int[] newShape1Dimensions = { 4, 2, 4};
               int[] newShape2Dimensions = { 3, 2, 4};
               int[] newShape3Dimensions = { 3, 3,3};
+            //Triangle newShape = new Triangle();
             Triangle newShape1 = new Triangle(newShape1Dimensions,"Isoscelese");
             Triangle newShape2 = new Triangle(newShape1Dimensions,"Scalene");
             Triangle newShape3 = new Triangle(newShape1Dimensions,"Equilateral");
