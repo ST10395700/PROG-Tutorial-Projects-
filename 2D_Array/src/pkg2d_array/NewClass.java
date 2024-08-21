@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 import static pkg2d_array.NewClass.Client.*;
 
-
-
 public class NewClass {
 
     public static String[] meal = {"Breakfast", "Lunch", "Dinner"};
@@ -24,6 +22,7 @@ public class NewClass {
     public static class Client {
 
         public static List<Client> myClients = new ArrayList<>();
+        public static List<Integer> numClients = new ArrayList<>();
         public static Scanner ScanLn = new Scanner(System.in);
 
         public String clientName = "";
@@ -34,17 +33,18 @@ public class NewClass {
         public String[][] MealPlan = new String[5][3];
 
         public Client() {
+
         }
 
         public String[] ClientNames() {
             String[] myClientNames = new String[myClients.size()];
             int count = 0;
             for (Client client : myClients) {
-              myClientNames[count] =  client.clientName;
-              count++;
+                myClientNames[count] = client.clientName;
+                count++;
             }
             int num = myClientNames.length;
-            return myClientNames ;
+            return myClientNames;
         }
 
         public Client(String Name, double weight, double weightGoal, int age) {
@@ -74,7 +74,7 @@ public class NewClass {
             String Name = ScanLn.next();
             System.out.println("Enter weight");
             String weight = ScanLn.next();
-            
+
             Client defaultClient = new Client();
             String weightGoal = defaultClient.captureWeightGoal();
             String age = defaultClient.captureAge();
@@ -89,9 +89,9 @@ public class NewClass {
             Double currentWeight = Double.parseDouble(weightGoal);
             Double weightG = Double.parseDouble(weight);
 
-            Client newClient = new Client(Name, currentWeight, weightG, clientAge);
+            Client myClient = new Client(Name, currentWeight, weightG, clientAge);
 
-            return newClient;
+            return myClient;
         }
 
         public static boolean validateAge(int age) {
@@ -106,6 +106,27 @@ public class NewClass {
                     MealPlan[row][col] = ScanLn.next();
                 }
             }
+        }
+
+        public static void searchClient() {
+            System.out.print("Enter client name to search: ");
+            String clientName = ScanLn.nextLine();
+
+            Client foundClient = findClient(clientName);
+            if (foundClient == null) {
+                System.out.println("Client not found.");
+            } else {
+                System.out.println("Client found:");
+            }
+        }
+
+        public static Client findClient(String name) {
+            for (Client client : myClients) {
+                if (name.equals(client.clientName)) {
+                    return client;
+                }
+            }
+            return null;
         }
 
         public void searchMealPlanItem(String search) {
