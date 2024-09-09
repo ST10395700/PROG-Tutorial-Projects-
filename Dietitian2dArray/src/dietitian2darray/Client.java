@@ -1,25 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.colava to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pkg2d_array;
+package dietitian2darray;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import static dietitian2darray.Dietitian2dArray.*;
 /**
  *
  * @author tvnmt
  */
-import java.awt.DisplayMode;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import static pkg2d_array.NewClass.Client.*;
 
-public class NewClass {
-
-    public static String[] meal = {"Breakfast", "Lunch", "Dinner"};
-    public static String[] dayOfTheWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-
-    public static class Client {
+ public  class Client {
 
         public static List<Client> myClients = new ArrayList<>();
         public static List<Integer> numClients = new ArrayList<>();
@@ -116,7 +110,8 @@ public class NewClass {
             if (foundClient == null) {
                 System.out.println("Client not found.");
             } else {
-                System.out.println("Client found:");
+                System.out.println("Client found:\n"+String.format("Client name: %-15s\tClient age: %-15d", foundClient.clientName, foundClient.clientAge));
+                
             }
         }
 
@@ -215,45 +210,3 @@ public class NewClass {
         // two Dimentional array 
 
     }
-
-    public static void displayDayOfWeekArray() {
-
-        String Output = "";
-        for (String day : dayOfTheWeek) {
-            Output += day + "\n";
-        }
-        System.out.println(Output);
-        //JOptionPane.showMessageDialog(null, Output);
-    }
-
-    public static void main(String[] args) {
-
-        Client newClient = new Client();
-        String newStrint = "string";
-        registerClient();
-        validateAge(0);
-        //newClient.captureMealPlan();
-        newClient.generateMealPlan();
-        newClient.searchMealPlanItem("oats");
-        //System.out.println(newClient.DisplayFormatedMealPlan());
-        //System.out.println(newClient.DisplayMealPlan());*/
-        //displayDayOfWeekArray();
-    }
-
-}
-
-/*
-public String captureEmail (){
-        String email="";
-        boolean validEmail = false;
-        
-        while(!validEmail)
-        {
-            System.out.println("Enter your email address");
-            if (email.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
-                validEmail = true;
-            } else{System.out.println("try again");}
-        }
-        
-        return "";
-    } */
