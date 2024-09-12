@@ -40,16 +40,29 @@ public class Shape {
     }*/
     //public interface ShapesWithSides extends shape{} 
     // abstract or interface method
-    interface areaCalc {
+    interface iareaCalc {
 
-        public abstract double CalcArea();
+        public  double CalcArea();
     }
 
-    interface sidesTotal {
+    interface isidesTotal {
 
         public double TotalSides = 0;
 
         public abstract double totalSides();
+    }
+
+    abstract class myClass {
+
+        public abstract double totalSides();
+
+        public double totalSide(double[] sides) {
+            double total = 0;
+            for (double side : sides) {
+                total += side;
+            }
+            return 3;
+        }
     }
 
     public double CalcPerimeter() {
@@ -60,9 +73,6 @@ public class Shape {
 
         return perimeter;
     }
-
-    
-
 
     public static void main(String[] args) {
 
