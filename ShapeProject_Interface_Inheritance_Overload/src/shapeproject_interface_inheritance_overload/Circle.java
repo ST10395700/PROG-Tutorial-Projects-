@@ -8,7 +8,7 @@ package shapeproject_interface_inheritance_overload;
  *
  * @author tvnmt
  */
-   public  class Circle extends Shape implements Shape.areaCalc {
+   public  class Circle extends Shape implements Shape.iareaCalc {
 
         @Override
         public double CalcPerimeter() {

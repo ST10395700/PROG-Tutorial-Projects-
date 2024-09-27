@@ -8,14 +8,14 @@ package shapeproject_interface_inheritance_overload;
  *
  * @author tvnmt
  */
- public class Quadrilateral extends Shape implements Shape.areaCalc, Shape.sidesTotal {
+ public class Quadrilateral extends Shape implements Shape.iareaCalc, Shape.isidesTotal {
 
         public int shapeNumSides = 0;
 
         @Override
         public double totalSides() {
 
-            return 5;
+            return 4;
         }
 
         public Quadrilateral(int[] newDimensions, String myShapeName) {
@@ -28,15 +28,15 @@ package shapeproject_interface_inheritance_overload;
         @Override
         public double CalcArea() {
             //Parallelogram Square Rectangle
-            int area = this.Dimensions[0] * this.Dimensions[2];
+            double area = this.Dimensions[0] * this.Dimensions[1];
 
             return area;
         }
 
-        public double CalcArea(int diagonal1, int diagonal2) {
+        public double CalcArea(double diagonal1, double diagonal2) {
             //Rhombus
 
-            int area = (diagonal1 * diagonal2) / 2;
+            double area = (diagonal1 * diagonal2) / 2;
 
             return area;
         }

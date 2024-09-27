@@ -19,8 +19,8 @@ public class Shape {
     }
 
     public Shape(int[] dimensions, String newShapeName) {
-        Name = newShapeName;
-        Dimensions = dimensions;
+        this.Name = newShapeName;
+        this.Dimensions = dimensions;
     }
 
     public static List<Shape> myShapes = new ArrayList<>();
@@ -42,7 +42,7 @@ public class Shape {
     // abstract or interface method
     interface iareaCalc {
 
-        public  double CalcArea();
+        public double CalcArea();
     }
 
     interface isidesTotal {
@@ -55,14 +55,11 @@ public class Shape {
     abstract class myClass {
 
         public abstract double totalSides();
-
+        /*
         public double totalSide(double[] sides) {
-            double total = 0;
-            for (double side : sides) {
-                total += side;
-            }
-            return 3;
-        }
+
+            return sides.length;
+        } */
     }
 
     public double CalcPerimeter() {
